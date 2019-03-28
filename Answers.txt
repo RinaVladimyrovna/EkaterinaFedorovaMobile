@@ -1,0 +1,2 @@
+5. device id should be changed to id of a real device
+6. in my case it takes another chromedriver version and a couple of additional steps due to vendor's wrapper.
