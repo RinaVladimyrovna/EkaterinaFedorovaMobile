@@ -21,12 +21,20 @@ public class Hooks extends DriverSetup {
         super(set);
     }
 
+    /**
+     * Prepare driver and inform me in console.
+     */
+
     @BeforeSuite(description = "Prepare driver to run test(s)")
     public void setUp() throws Exception {
         prepareDriver();
         System.out.println("Driver prepared");
 
     }
+
+    /**
+     * Close driver and inform me in console.
+     */
 
     @AfterSuite(description = "Close driver on all tests completion")
     public void tearDown() throws Exception {

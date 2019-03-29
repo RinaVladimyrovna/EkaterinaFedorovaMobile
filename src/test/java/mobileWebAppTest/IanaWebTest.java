@@ -8,6 +8,13 @@ import pageObject.IanaWebPage;
 
 import static org.testng.Assert.assertEquals;
 
+/**
+ * Test to check browser work;
+ * Be informed that default browser is used by default.
+ * If you need chrome browser or others, please go to src/main/java/setup/DriverSetup.class
+ * and src/main/java/entities/Browsers.class
+ */
+
 @Test(groups = "web")
 public class IanaWebTest extends Hooks {
 
@@ -23,10 +30,10 @@ public class IanaWebTest extends Hooks {
         statusCode = RestAssured.get(sut).statusCode();
         assertEquals(200, statusCode);
 
-        //1. Open site
+        // Open site
         ianaWebPage.open(sut, driverWait());
 
-        //2. Check page Title
+        // Verify page Title
         ianaWebPage.checkPageTitle();
 
     }

@@ -5,6 +5,10 @@ import hooks.Hooks;
 import org.testng.annotations.Test;
 import pageObject.ContactManager;
 
+/**
+ * Test to check Contact Manager on Andtroid platform.
+ */
+
 @Test(groups = "native")
 public class ContactManagerTest extends Hooks {
 

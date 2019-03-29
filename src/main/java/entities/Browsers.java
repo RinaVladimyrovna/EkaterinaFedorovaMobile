@@ -1,5 +1,8 @@
 package entities;
 
+/**
+ * One can select a browser to use
+ */
 public enum Browsers {
 
     FIREFOX("Firefox"),

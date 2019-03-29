@@ -7,6 +7,12 @@ import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+/**
+ * Outdated driver setup class.
+ * Relative paths were working more than fine here.
+ * Strange that they work bad now in modern class.
+ */
+
 public class DriverSetup {
 
     protected AndroidDriver driver;

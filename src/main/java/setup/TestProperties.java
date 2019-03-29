@@ -6,6 +6,12 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
+/**
+ * Test properties are got due to this class.
+ * Better to use gson and reflection.
+ * Need TODO.
+ */
+
 public class TestProperties {
 
     private Properties currentProps = new Properties();

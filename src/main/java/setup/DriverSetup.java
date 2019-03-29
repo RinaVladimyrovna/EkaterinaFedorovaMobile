@@ -16,7 +16,9 @@ import java.net.URL;
 public class DriverSetup extends TestProperties {
 
     /**
-     * Initialize a driver with test properties
+     * Initialize a driver with test properties.
+     * This class need a bit of code rearrangement.
+     * Implement reflection use as TODO.
      */
 
     private static AppiumDriver driver;

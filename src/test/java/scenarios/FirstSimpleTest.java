@@ -5,6 +5,11 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+/**
+ * Outdated test.
+ * New versions are in src/test/java directories.
+ */
+
 public class FirstSimpleTest extends DriverSetup{
 
     @BeforeClass
