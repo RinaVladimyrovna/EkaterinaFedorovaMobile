@@ -12,7 +12,9 @@ public enum PropertyNames {
     TEST_PLATFORM("platform"),
     DRIVER("driver"),
     DEVICE("deviceName"),
-    DRIVER_PATH("driverPath");
+    DRIVER_PATH("driverPath"),
+    PACKAGE("appPackage"),
+    ACTIVITY("appActivity");
 
     private String propertyName;
 

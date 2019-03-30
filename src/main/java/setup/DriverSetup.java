@@ -30,6 +30,8 @@ public class DriverSetup extends TestProperties {
     protected String testPlatform;
     protected String propertyDriver;
     protected String device;
+    protected String appPackage;
+    protected String appActivity;
 
     // Constructor initializes properties on driver creation
     protected DriverSetup(PropertySets set) throws IOException {
@@ -39,6 +41,8 @@ public class DriverSetup extends TestProperties {
         testPlatform = getProp(PropertyNames.TEST_PLATFORM.toString());
         propertyDriver = getProp(PropertyNames.DRIVER.toString());
         device = getProp(PropertyNames.DEVICE.toString());
+        appPackage = getProp(PropertyNames.PACKAGE.toString());;
+        appActivity = getProp(PropertyNames.ACTIVITY.toString());;
     }
 
     /**
@@ -52,11 +56,14 @@ public class DriverSetup extends TestProperties {
         String browserName;
         // Setup test platform: Android or iOS. Browser also depends on a platform.
         if ("Android".equals(testPlatform)) {
-            capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, device);
+            capabilities.setCapability(MobileCapabilityType.UDID, device);
             capabilities.setCapability("chromedriverExecutable", System.getProperty("user.dir") + getProp(PropertyNames.DRIVER_PATH.toString()));
+            capabilities.setCapability("appPackage", appPackage);
+            capabilities.setCapability("appActivity", appActivity);
             browserName = Browsers.DEFAULT.toString();
 
         } else if ("iOS".equals(testPlatform)) {
+            capabilities.setCapability(MobileCapabilityType.UDID, device);
             browserName = Browsers.SAFARI.toString();
 
         } else {

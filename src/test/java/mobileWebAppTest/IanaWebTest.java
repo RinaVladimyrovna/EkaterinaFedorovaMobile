@@ -21,7 +21,7 @@ public class IanaWebTest extends Hooks {
     private IanaWebPage ianaWebPage = new IanaWebPage(driver());
 
     protected IanaWebTest() throws Exception {
-        super(PropertySets.WEB);
+        super(PropertySets.IOS_WEB);
     }
 
     @Test(description = "Open website")
@@ -32,6 +32,7 @@ public class IanaWebTest extends Hooks {
 
         // Open site
         ianaWebPage.open(sut, driverWait());
+        Thread.sleep(5000);
 
         // Verify page Title
         ianaWebPage.checkPageTitle();

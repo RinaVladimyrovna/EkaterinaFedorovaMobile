@@ -1,5 +1,6 @@
 package mobileNativeAppTest;
 
+import cloudApi.RequestsToCloud;
 import entities.PropertySets;
 import hooks.Hooks;
 import org.testng.annotations.Test;
@@ -20,6 +21,9 @@ public class ContactManagerTest extends Hooks {
     @Test(description = "Open Add Contact screen and verify displayed elements")
     public void simplestAddContactScreenTest() throws Exception {
         ContactManager contactManager = new ContactManager(driver());
+
+        //install application
+        RequestsToCloud.installApplication(aut);
 
         // Open contact form
         contactManager.openContactForm();
