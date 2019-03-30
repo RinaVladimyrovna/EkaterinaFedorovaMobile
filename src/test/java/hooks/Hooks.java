@@ -1,5 +1,6 @@
 package hooks;
 
+import cloudApi.RequestsToCloud;
 import entities.PropertySets;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
@@ -27,6 +28,7 @@ public class Hooks extends DriverSetup {
 
     @BeforeSuite(description = "Prepare driver to run test(s)")
     public void setUp() throws Exception {
+        RequestsToCloud.installApplication(aut);
         prepareDriver();
         System.out.println("Driver prepared");
 

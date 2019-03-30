@@ -22,9 +22,6 @@ public class ContactManagerTest extends Hooks {
     public void simplestAddContactScreenTest() throws Exception {
         ContactManager contactManager = new ContactManager(driver());
 
-        //install application
-        RequestsToCloud.installApplication(aut);
-
         // Open contact form
         contactManager.openContactForm();
 
