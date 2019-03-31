@@ -1,0 +1,7 @@
+1. Yes, it did. I believe it took a random device, since no device name was set in capabilities for iOS. Test proceeded passing after the capability was set.
+
+3. No, it did not. Since no application of interest is installed on the endpoint device.
+
+4. The same as above.
+
+5. API use to install application. Unfortunately, device should be occupied before test is run.
