@@ -10,7 +10,6 @@ import static org.testng.Assert.assertEquals;
 /**
  * Page object for test with browser page
  */
-
 public class IanaWebPage {
 
     private AppiumDriver driver;

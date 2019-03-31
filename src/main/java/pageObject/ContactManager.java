@@ -9,7 +9,6 @@ import static org.testng.Assert.assertTrue;
 /**
  * Page object for Android native test with Contact Manager.apk
  */
-
 public class ContactManager {
 
     private AppiumDriver driver;

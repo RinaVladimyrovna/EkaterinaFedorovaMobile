@@ -4,7 +4,6 @@ package entities;
  * Warning messages.
  * Easy to translate or change.
  */
-
 public enum Warnings {
 
     UNKNOWN_PLATFORM("Unknown mobile platform"),

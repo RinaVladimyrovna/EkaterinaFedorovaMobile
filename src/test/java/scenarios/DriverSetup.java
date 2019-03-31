@@ -12,7 +12,6 @@ import java.net.URL;
  * Relative paths were working more than fine here.
  * Strange that they work bad now in modern class.
  */
-
 public class DriverSetup {
 
     protected AndroidDriver driver;

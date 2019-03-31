@@ -3,7 +3,6 @@ package entities;
 /**
  * Just a title made as a constant
  */
-
 public enum WebConstants {
 
     TITLE("Internet Assigned Numbers Authority");

@@ -4,7 +4,6 @@ package entities;
  * These are used to take off hardcoded values of code.
  * It is better to rearrange code a bit and use reflection.
  */
-
 public enum PropertyNames {
 
     AUT("aut"),

@@ -1,25 +1,26 @@
 package mobileNativeAppTest;
 
-import cloudApi.RequestsToCloud;
-import entities.PropertySets;
 import hooks.Hooks;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import pageObject.ContactManager;
 
 /**
- * Test to check Contact Manager on Andtroid platform.
+ * Test to check Contact Manager on Andtroid or iOS platform.
  */
-
 @Test(groups = "native")
 public class ContactManagerTest extends Hooks {
 
-    protected ContactManagerTest() throws Exception {
-        super(PropertySets.NATIVE);
-    }
+    @Parameters({"nativePropertyFile"})
+    protected ContactManagerTest(String propertyFile) throws Exception {
 
+        super(propertyFile);
+
+    }
 
     @Test(description = "Open Add Contact screen and verify displayed elements")
     public void simplestAddContactScreenTest() throws Exception {
+
         ContactManager contactManager = new ContactManager(driver());
 
         // Open contact form

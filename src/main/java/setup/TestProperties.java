@@ -1,7 +1,5 @@
 package setup;
 
-import entities.PropertySets;
-
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
@@ -11,7 +9,6 @@ import java.util.Properties;
  * Better to use gson and reflection.
  * Need TODO.
  */
-
 public class TestProperties {
 
     private Properties currentProps = new Properties();
@@ -33,8 +30,8 @@ public class TestProperties {
 
     }
 
-    TestProperties(PropertySets set) {
-        this.fileName = set.toString();
+    TestProperties(String set) {
+        this.fileName = set;
     }
 
 }

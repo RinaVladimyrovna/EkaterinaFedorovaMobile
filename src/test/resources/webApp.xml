@@ -2,6 +2,10 @@
 
 <suite name="Web Suite" verbose="1">
 
+    <!-- Please, use given parameter to insert address of desired property file. -->
+    <!-- Please, select files from rc/main/resources/properties/ directory -->
+    <parameter name="webPropertyFile" value="src/main/resources/properties/webIos.properties"/>
+
     <test name="web">
 
         <groups>

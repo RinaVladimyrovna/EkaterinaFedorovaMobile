@@ -2,7 +2,6 @@ package setup;
 
 import entities.Browsers;
 import entities.PropertyNames;
-import entities.PropertySets;
 import entities.Warnings;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
@@ -34,7 +33,7 @@ public class DriverSetup extends TestProperties {
     protected String appActivity;
 
     // Constructor initializes properties on driver creation
-    protected DriverSetup(PropertySets set) throws IOException {
+    protected DriverSetup(String set) throws IOException {
         super(set);
         aut = getProp(PropertyNames.AUT.toString());
         sut = getProp(PropertyNames.SUT.toString());
@@ -50,7 +49,6 @@ public class DriverSetup extends TestProperties {
      *
      * @throws Exception
      */
-
     protected void prepareDriver() throws Exception {
         capabilities = new DesiredCapabilities();
         String browserName;

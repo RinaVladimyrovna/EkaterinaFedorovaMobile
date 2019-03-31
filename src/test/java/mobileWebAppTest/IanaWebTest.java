@@ -3,6 +3,7 @@ package mobileWebAppTest;
 import entities.PropertySets;
 import hooks.Hooks;
 import io.restassured.RestAssured;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import pageObject.IanaWebPage;
 
@@ -14,14 +15,14 @@ import static org.testng.Assert.assertEquals;
  * If you need chrome browser or others, please go to src/main/java/setup/DriverSetup.class
  * and src/main/java/entities/Browsers.class
  */
-
 @Test(groups = "web")
 public class IanaWebTest extends Hooks {
 
     private IanaWebPage ianaWebPage = new IanaWebPage(driver());
 
-    protected IanaWebTest() throws Exception {
-        super(PropertySets.IOS_WEB);
+    @Parameters({"webPropertyFile"})
+    protected IanaWebTest(String propertyFile) throws Exception {
+        super(propertyFile);
     }
 
     @Test(description = "Open website")
@@ -32,7 +33,6 @@ public class IanaWebTest extends Hooks {
 
         // Open site
         ianaWebPage.open(sut, driverWait());
-        Thread.sleep(5000);
 
         // Verify page Title
         ianaWebPage.checkPageTitle();

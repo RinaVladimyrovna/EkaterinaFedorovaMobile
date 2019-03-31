@@ -1,10 +1,11 @@
 package entities;
 
+/**
+ * One can select a property set according to application type.
+ * Deprecated due to parameters in TNG.xml
+ */
 public enum PropertySets {
 
-    /**
-     * One can select a property set according to application type
-     */
     NATIVE("src/main/resources/properties/native.properties"),
     WEB("src/main/resources/properties/web.properties"),
     IOS_NATIVE("src/main/resources/properties/nativeIos.properties"),
