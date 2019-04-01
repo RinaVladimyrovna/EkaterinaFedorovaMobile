@@ -1,7 +1,6 @@
 package setup;
 
 import entities.Browsers;
-import entities.PropertyNames;
 import entities.Warnings;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
@@ -11,6 +10,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+
+import static entities.PropertyNames.*;
+import static entities.SetupConstants.*;
 
 public class DriverSetup extends TestProperties {
 
@@ -31,17 +33,19 @@ public class DriverSetup extends TestProperties {
     protected String device;
     protected String appPackage;
     protected String appActivity;
+    protected String token;
 
     // Constructor initializes properties on driver creation
     protected DriverSetup(String set) throws IOException {
         super(set);
-        aut = getProp(PropertyNames.AUT.toString());
-        sut = getProp(PropertyNames.SUT.toString());
-        testPlatform = getProp(PropertyNames.TEST_PLATFORM.toString());
-        propertyDriver = getProp(PropertyNames.DRIVER.toString());
-        device = getProp(PropertyNames.DEVICE.toString());
-        appPackage = getProp(PropertyNames.PACKAGE.toString());;
-        appActivity = getProp(PropertyNames.ACTIVITY.toString());;
+        aut = getProp(AUT.toString());
+        sut = getProp(SUT.toString());
+        token = getProp(DRIVER.toString());
+        testPlatform = getProp(TEST_PLATFORM.toString());
+        propertyDriver = DRIVER_PREFIX.toString() + token + DRIVER_POSTFIX.toString();
+        device = getProp(DEVICE.toString());
+        appPackage = getProp(PACKAGE.toString());
+        appActivity = getProp(ACTIVITY.toString());
     }
 
     /**
@@ -55,7 +59,7 @@ public class DriverSetup extends TestProperties {
         // Setup test platform: Android or iOS. Browser also depends on a platform.
         if ("Android".equals(testPlatform)) {
             capabilities.setCapability(MobileCapabilityType.UDID, device);
-            capabilities.setCapability("chromedriverExecutable", System.getProperty("user.dir") + getProp(PropertyNames.DRIVER_PATH.toString()));
+            capabilities.setCapability("chromedriverExecutable", System.getProperty("user.dir") + getProp(DRIVER_PATH.toString()));
             capabilities.setCapability("appPackage", appPackage);
             capabilities.setCapability("appActivity", appActivity);
             browserName = Browsers.DEFAULT.toString();
@@ -87,7 +91,7 @@ public class DriverSetup extends TestProperties {
         }
 
         if (wait == null) {
-            wait = new WebDriverWait(driver(), 10);
+            wait = new WebDriverWait(driver(), 30);
         }
 
     }

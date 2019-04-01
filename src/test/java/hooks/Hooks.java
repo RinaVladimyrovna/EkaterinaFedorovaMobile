@@ -24,7 +24,8 @@ public class Hooks extends DriverSetup {
      */
     @BeforeSuite(groups = "native", description = "Prepare driver to run test(s)")
     public void setUpNativeFarm() throws Exception {
-        RequestsToCloud.installApplication(aut);
+        RequestsToCloud.reserveDeviceBySerial(device, token);
+        RequestsToCloud.installApplication(aut, device, token);
         prepareDriver();
         System.out.println("Driver prepared");
 

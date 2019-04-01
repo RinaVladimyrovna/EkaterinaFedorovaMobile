@@ -9,7 +9,7 @@ public enum PropertyNames {
     AUT("aut"),
     SUT("sut"),
     TEST_PLATFORM("platform"),
-    DRIVER("driver"),
+    DRIVER("token"),
     DEVICE("deviceName"),
     DRIVER_PATH("driverPath"),
     PACKAGE("appPackage"),
